@@ -1,0 +1,12 @@
+[
+    {
+        "name": "zimaos_termianl",
+        "title": "Zimaos Terminal",
+        "repo": "CorrectRoadH/ZimaOS-Terminal"
+    },
+    {
+        "name": "zimaos_firewall",
+        "title": "Zimaos Firewall",
+        "repo": "CorrectRoadH/Casaos-Firewall"
+    }
+]
