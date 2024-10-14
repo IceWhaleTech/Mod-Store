@@ -8,5 +8,10 @@
         "name": "zimaos_firewall",
         "title": "Zimaos Firewall",
         "repo": "CorrectRoadH/Casaos-Firewall"
+    },
+    {
+        "name": "x2t",
+        "title": "X2T",
+        "repo": "IceWhaleTech/ZimaOS-x2t"
     }
 ]
