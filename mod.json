@@ -13,5 +13,10 @@
         "name": "x2t",
         "title": "X2T",
         "repo": "IceWhaleTech/ZimaOS-x2t"
+    },
+    {
+        "name": "manticore",
+        "title": "manticore",
+        "repo": "IceWhaleTech/manticore"
     }
 ]
