@@ -1,0 +1,27 @@
+[
+    {
+        "name": "zimaos_terminal",
+        "title": "Zimaos Terminal",
+        "repo": "CorrectRoadH/ZimaOS-Terminal"
+    },
+    {
+        "name": "zimaos_firewall",
+        "title": "Zimaos Firewall",
+        "repo": "CorrectRoadH/Casaos-Firewall"
+    },
+    {
+        "name": "doconverter",
+        "title": "doconverter",
+        "repo": "IceWhaleTech/ZimaOS-doconverter"
+    },
+    {
+        "name": "manticore",
+        "title": "manticore",
+        "repo": "IceWhaleTech/manticore"
+    },
+    {
+        "name": "zimaos-ai",
+        "title": "Zimaos AI",
+        "url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI/releases/download/v0.0.24/zimaos_ai.raw"
+    }
+]
