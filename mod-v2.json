@@ -20,7 +20,7 @@
         "repo": "IceWhaleTech/manticore"
     },
     {
-        "name": "zimaos-ai",
+        "name": "zimaos_ai",
         "title": "Zimaos AI",
         "url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI/releases/download/v0.0.42/zimaos_ai.raw",
         "self_hosted_url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI/releases/download/zimaos-ai.txt"
