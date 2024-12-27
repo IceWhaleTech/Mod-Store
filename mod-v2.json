@@ -17,7 +17,7 @@
     {
         "name": "manticore",
         "title": "manticore",
-        "repo": "IceWhaleTech/manticore"
+        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/manticore@releases/download/v0.0.5/manticore.raw"
     },
     {
         "name": "zimaos_ai",
