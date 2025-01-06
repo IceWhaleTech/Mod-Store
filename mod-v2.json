@@ -17,12 +17,12 @@
     {
         "name": "manticore",
         "title": "manticore",
-        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/manticore@main/manticore.raw"
+        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/manticore@releases/download/v0.0.12/manticore.raw"
     },
     {
         "name": "manticore_icu",
         "title": "manticore_icu",
-        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/manticore@main/manticore_icu.raw"
+        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/manticore@releases/download/v0.0.12/manticore_icu.raw"
     },
     {
         "name": "zimaos_ai",
