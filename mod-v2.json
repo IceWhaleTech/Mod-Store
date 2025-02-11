@@ -25,6 +25,11 @@
         "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/manticore@main/manticore_icu.raw"
     },
     {
+        "name": "testdisk",
+        "title": "testdisk",
+        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/testdisk@main/testdisk.raw"
+    },
+    {
         "name": "zimaos_ai",
         "title": "Zimaos AI",
         "url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI/releases/download/v0.0.42/zimaos_ai.raw",
