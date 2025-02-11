@@ -1,0 +1,16 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Refresh CDN Cache
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+jobs:
+  refresh-cdn-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refresh CDN Cache
+        run: curl https://purge.jsdelivr.net/gh/IceWhaleTech/Mod-Store@main/mod-v2.json
