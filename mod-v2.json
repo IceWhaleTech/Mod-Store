@@ -39,5 +39,10 @@
         "name":"zimaos_ai_intel",
         "title": "ZimaOS AI for intel",
         "self_hosted_url":"https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI-Intel/releases/download/zimaos_ai_intel.txt"
+    },
+    {
+        "name":"mobile_backup",
+        "title": "Mobile Backup",
+        "self_hosted_url":"https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/icewhale_backup/releases/download/mobile_backup.json"
     }
 ]
