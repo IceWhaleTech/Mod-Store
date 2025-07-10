@@ -25,11 +25,6 @@
         "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/manticore@main/manticore_icu.raw"
     },
     {
-        "name": "manticore_jieba",
-        "title": "manticore_jieba",
-        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/manticore@main/manticore_jieba.raw"
-    },
-    {
         "name": "undelit",
         "title": "undelit",
         "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/undelit@main/undelit.raw"
