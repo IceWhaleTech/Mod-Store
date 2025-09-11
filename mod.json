@@ -18,5 +18,10 @@
         "name": "manticore",
         "title": "manticore",
         "repo": "IceWhaleTech/manticore"
+    },
+    {
+        "name": "jellyfin-gateway",
+        "title": "jellyfin-gateway",
+        "repo": "mark8s/media-api"
     }
 ]
