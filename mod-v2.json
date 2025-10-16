@@ -32,12 +32,14 @@
     {
         "name": "zimaos_ai",
         "title": "ZimaOS AI",
-        "url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI/releases/download/v0.0.85/zimaos_ai.raw"
+        "url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI/releases/download/v0.0.86/zimaos_ai.raw",
+        "self_hosted_url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI/releases/download/zimaos_ai.txt"
     },
     {
         "name":"zimaos_ai_intel",
         "title": "ZimaOS AI for intel",
-        "url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI-Intel/releases/download/v0.0.85/zimaos_ai_intel.raw"
+        "url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI-Intel/releases/download/v0.0.86/zimaos_ai_intel.raw",
+        "self_hosted_url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI-Intel/releases/download/zimaos_ai_intel.txt"
     },
     {
         "name":"mobile_backup",
