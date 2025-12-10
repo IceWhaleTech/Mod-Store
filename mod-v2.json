@@ -15,6 +15,11 @@
         "repo": "IceWhaleTech/ZimaOS-doconverter"
     },
     {
+        "name": "zima_cron",
+        "title": "zima_cron",
+        "repo": "LinkLeong/zima_cron"
+    },
+    {
         "name": "manticore",
         "title": "manticore",
         "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/manticore@main/manticore.raw"
@@ -45,10 +50,5 @@
         "name":"mobile_backup",
         "title": "Mobile Backup",
         "self_hosted_url":"https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/icewhale_backup/releases/download/mobile_backup.json"
-    },
-    {
-        "name": "zima_cron",
-        "title": "zima_cron",
-        "repo": "LinkLeong/zima_cron"
     }
 ]
