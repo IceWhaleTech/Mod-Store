@@ -45,5 +45,10 @@
         "name":"mobile_backup",
         "title": "Mobile Backup",
         "self_hosted_url":"https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/icewhale_backup/releases/download/mobile_backup.json"
+    },
+    {
+        "name": "zima_cron",
+        "title": "zima_cron",
+        "url": "https://github.com/LinkLeong/zima_cron/releases/download/v0.1.12/zimaos_cron.raw"
     }
 ]
