@@ -15,6 +15,11 @@
         "repo": "IceWhaleTech/ZimaOS-doconverter"
     },
     {
+        "name": "zima_cron",
+        "title": "zima_cron",
+        "repo": "LinkLeong/zima_cron"
+    },
+    {
         "name": "manticore",
         "title": "manticore",
         "repo": "IceWhaleTech/manticore"
