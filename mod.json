@@ -23,10 +23,5 @@
         "name": "manticore",
         "title": "manticore",
         "repo": "IceWhaleTech/manticore"
-    },
-    {
-        "name": "gpm",
-        "title": "Glochidia Package Manager",
-        "repo": "uairhahs/glochidia"
     }
 ]
