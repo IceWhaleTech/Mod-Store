@@ -50,5 +50,10 @@
         "name":"mobile_backup",
         "title": "Mobile Backup",
         "self_hosted_url":"https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/icewhale_backup/releases/download/mobile_backup.json"
+    },
+    {
+        "name": "gpm",
+        "title": "Glochidia Package Manager",
+        "url": "https://github.com/uairhahs/glochidia/releases/download/latest/gpm.raw"
     }
 ]
