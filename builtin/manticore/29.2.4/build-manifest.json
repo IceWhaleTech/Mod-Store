@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "version": "29.2.4",
+  "target": "linux/amd64",
+  "source_date_epoch": 1787529600,
+  "manticore": {
+    "repository": "https://github.com/manticoresoftware/manticoresearch",
+    "commit": "3ca6eaa87973967f0a18d73aca277e1118d7f73d",
+    "source_archive_sha256": "2c902555d033a1b8f8f37c344d8fde030d192228286a5f735455d05f66215eba",
+    "reported_version": "Manticore 29.2.4 3ca6eaa879@260824"
+  },
+  "mcl": {
+    "repository": "https://github.com/manticoresoftware/columnar",
+    "version": "13.10.0",
+    "commit": "5f1b59b5b4173c344ff9efecd47a1bc9bc408a93",
+    "source_archive_sha256": "215fd479ff50015cc9808049c6f41c1e494168837d9f54271c4966fb3b641e45",
+    "embeddings_version": "1.1.1 5f1b59b5@260819",
+    "embeddings_abi": 4
+  },
+  "build": {
+    "build_type": "Release",
+    "features": [
+      "columnar",
+      "knn",
+      "embeddings",
+      "icu",
+      "jieba"
+    ],
+    "toolchain_image": "manticoresearch/external_toolchain:vcpkg331_20260310",
+    "toolchain_image_id": "sha256:87537946a714b2dd501799579200510c79586b922b60d43c407e3d5b4c66855f",
+    "clang": "16.0.6",
+    "cmake": "3.31.2",
+    "rust": "1.98.0 (88d9e12ae 2026-08-18)",
+    "onnxruntime": "1.24.2 static glibc2.17",
+    "mksquashfs": "4.6.1",
+    "squashfs": {
+      "compression": "zstd",
+      "compression_level": 22,
+      "block_size": 1048576,
+      "all_root": true,
+      "xattrs": false
+    }
+  },
+  "compatibility_baseline": {
+    "host": "10.0.0.89",
+    "kernel": "6.18.9",
+    "libc": "Buildroot 2.42",
+    "cpu_arch": "x86_64",
+    "minimum_cpu": "x86-64-v2"
+  },
+  "automatic_embedding_model": {
+    "hugging_face_repo": "orca-zhang/multilingual-e5-small-int8",
+    "hugging_face_revision": "0d5ddc373ec31b9802b633640eeededeb1623ab5",
+    "model_onnx_sha256": "4d24e2bc01a447951524466ef533e52944bf48509e6552810bcee1a2711cb02c",
+    "dimension": 384,
+    "query_prefix": "query: ",
+    "passage_prefix": "passage: "
+  },
+  "constraints": {
+    "maximum_file_bytes_exclusive": 15000000,
+    "all_packages_within_limit": true,
+    "photos_searchd_is_regular_file": true,
+    "photos_searchd_is_symlink": false
+  },
+  "packages": [
+    {
+      "file": "manticore.raw",
+      "size_bytes": 9859072,
+      "sha256": "199778d12a67e7edf2f807f009b31ff54f8a71d3f0f63eaffa1cc523b4ab5366",
+      "contents": [
+        "/usr/bin/searchd",
+        "/usr/bin/photos-searchd",
+        "/usr/include/manticore/sphinxudf.h",
+        "/usr/share/manticore/en.pak",
+        "/usr/share/manticore/stopwords/",
+        "/usr/share/manticore/tzdata/"
+      ]
+    },
+    {
+      "file": "manticore_knn.raw",
+      "size_bytes": 2301952,
+      "sha256": "f1f95826fb5cffe4e78113da75b73b6db17a68f8771e57ac53b343feabb7e8fc",
+      "contents": [
+        "/usr/share/manticore/modules/lib_manticore_columnar.so",
+        "/usr/share/manticore/modules/lib_manticore_knn.so"
+      ]
+    },
+    {
+      "file": "manticore_embeddings.raw",
+      "size_bytes": 9310208,
+      "sha256": "8ed29c1be7a0ada4f653525de76c5b63cdb1559cbd0de927fbd069793de21a03",
+      "contents": [
+        "/usr/share/manticore/modules/lib_manticore_knn_embeddings.so"
+      ]
+    },
+    {
+      "file": "manticore_icu.raw",
+      "size_bytes": 9011200,
+      "sha256": "7a0dc806b6f3190f1738a76bdde04efe646db7db29b2e67812b4260f4ef8c953",
+      "contents": [
+        "/usr/share/manticore/icu/icudt65l.dat"
+      ]
+    },
+    {
+      "file": "manticore_jieba.raw",
+      "size_bytes": 3649536,
+      "sha256": "f1ba31dad29b9a9118d754b3daf55c4bfd4ed9a9c011e40cf01c58eef8dda102",
+      "contents": [
+        "/usr/share/manticore/jieba/"
+      ]
+    }
+  ]
+}
