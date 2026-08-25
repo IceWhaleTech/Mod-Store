@@ -15,7 +15,19 @@
     "commit": "5f1b59b5b4173c344ff9efecd47a1bc9bc408a93",
     "source_archive_sha256": "215fd479ff50015cc9808049c6f41c1e494168837d9f54271c4966fb3b641e45",
     "embeddings_version": "1.1.1 5f1b59b5@260819",
-    "embeddings_abi": 4
+    "embeddings_abi": 4,
+    "embeddings_module_size_bytes": 36111272,
+    "embeddings_module_sha256": "637e3459fd304499a8001ccc02d88552892e1f5c2eda26ee5a3b4f30fdd9a2b3",
+    "source_patches": [
+      {
+        "file": "patches/0001-embeddings-use-basic-onnx-graph-optimization.patch",
+        "sha256": "0b5e3f052ed063c6ad7e2225bd0676e645de89834c7c12f16ba1d202ce18947c"
+      },
+      {
+        "file": "patches/0002-embeddings-prefer-complete-cached-onnx-bundles.patch",
+        "sha256": "ca9413d4cefcbf890a0d52036503a496fd610c3ea14bffbdcb763c74a33fd02c"
+      }
+    ]
   },
   "build": {
     "build_type": "Release",
@@ -54,13 +66,24 @@
     "model_onnx_sha256": "4d24e2bc01a447951524466ef533e52944bf48509e6552810bcee1a2711cb02c",
     "dimension": 384,
     "query_prefix": "query: ",
-    "passage_prefix": "passage: "
+    "passage_prefix": "passage: ",
+    "complete_cached_bundle_bypasses_remote_format_probes": true
   },
   "constraints": {
     "maximum_file_bytes_exclusive": 15000000,
     "all_packages_within_limit": true,
     "photos_searchd_is_regular_file": true,
     "photos_searchd_is_symlink": false
+  },
+  "validation": {
+    "host": "10.0.0.89",
+    "cached_semantic_warmup_ms": 832,
+    "direct_semantic_query_ms_min": 11,
+    "direct_semantic_query_ms_max": 12,
+    "temporary_table_create_ms": 30,
+    "temporary_table_insert_ms": 30,
+    "temporary_knn_query_ms": 10,
+    "verified_dimension": 384
   },
   "packages": [
     {
@@ -87,8 +110,8 @@
     },
     {
       "file": "manticore_embeddings.raw",
-      "size_bytes": 9310208,
-      "sha256": "8ed29c1be7a0ada4f653525de76c5b63cdb1559cbd0de927fbd069793de21a03",
+      "size_bytes": 10018816,
+      "sha256": "ec910d789519a20ac4610e1ed499333105823dcd7d8b105f062e5e96b198f4e0",
       "contents": [
         "/usr/share/manticore/modules/lib_manticore_knn_embeddings.so"
       ]

@@ -1,0 +1,51 @@
+From 15b43758db052d76cb31cdaac80f4101a7c2370b Mon Sep 17 00:00:00 2001
+From: IceWhaleTech <dev@icewhale.com>
+Date: Tue, 25 Aug 2026 23:08:00 +0800
+Subject: [PATCH] embeddings: use basic ONNX graph optimization
+
+Use basic graph rewrites for the quantized multilingual E5 ONNX session.
+This keeps session initialization bounded on low-power hosts without
+changing the 384-dimensional output contract. Remote model-format probes
+are handled separately by the cache-first follow-up patch.
+---
+ embeddings/src/model/local.rs | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+
+diff --git a/embeddings/src/model/local.rs b/embeddings/src/model/local.rs
+index 429a6fb..0210cf5 100644
+--- a/embeddings/src/model/local.rs
++++ b/embeddings/src/model/local.rs
+@@ -892,7 +892,10 @@ impl OnnxEmbeddingModel {
+ 
+         let session = ort::session::Session::builder()
+             .map_err(|_| LibError::OnnxModelEvalFailed)?
+-            .with_optimization_level(ort::session::builder::GraphOptimizationLevel::Level3)
++            // Level2/3 spend tens of seconds applying offline CPU fusions to
++            // quantized transformer graphs on low-power hosts. Level1 keeps
++            // safe basic rewrites while preserving fast daemon restarts.
++            .with_optimization_level(ort::session::builder::GraphOptimizationLevel::Level1)
+             .map_err(|_| LibError::OnnxModelEvalFailed)?
+             .with_intra_threads(intra_threads())
+             .map_err(|_| LibError::OnnxModelEvalFailed)?
+@@ -1434,6 +1437,19 @@ impl TextModel for LocalModel {
+ #[cfg(test)]
+ mod tests {
+     use super::*;
++
++    #[test]
++    fn test_onnx_graph_optimization_level_avoids_expensive_offline_fusions() {
++        let source = include_str!("local.rs");
++        let production_source = source.split("#[cfg(test)]\nmod tests").next().unwrap();
++        assert!(production_source.contains(
++            ".with_optimization_level(ort::session::builder::GraphOptimizationLevel::Level1)"
++        ));
++        assert!(!production_source.contains(
++            ".with_optimization_level(ort::session::builder::GraphOptimizationLevel::Level3)"
++        ));
++    }
++
+     #[test]
+     fn test_model_arch_detection_qwen3() {
+         let qwen_config = r#"{"model_type":"qwen3"}"#;
+-- 
+2.50.1

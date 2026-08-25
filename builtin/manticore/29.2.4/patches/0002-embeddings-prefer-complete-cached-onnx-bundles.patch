@@ -1,0 +1,142 @@
+From 6ef49a8f92e4d5157aeab25816fb5ed8eb868103 Mon Sep 17 00:00:00 2001
+From: IceWhaleTech <dev@icewhale.com>
+Date: Wed, 26 Aug 2026 00:49:51 +0800
+Subject: [PATCH] embeddings: prefer complete cached ONNX bundles
+
+---
+ embeddings/Cargo.lock         |  1 +
+ embeddings/Cargo.toml         |  1 +
+ embeddings/src/model/local.rs | 72 ++++++++++++++++++++++++++++++++++-
+ 3 files changed, 73 insertions(+), 1 deletion(-)
+
+diff --git a/embeddings/Cargo.lock b/embeddings/Cargo.lock
+index 452ff0f..6fc0795 100644
+--- a/embeddings/Cargo.lock
++++ b/embeddings/Cargo.lock
+@@ -1888,6 +1888,7 @@ dependencies = [
+  "reqwest",
+  "serde",
+  "serde_json",
++ "tempfile",
+  "tokenizers",
+ ]
+ 
+diff --git a/embeddings/Cargo.toml b/embeddings/Cargo.toml
+index b1c0b3c..cc61383 100644
+--- a/embeddings/Cargo.toml
++++ b/embeddings/Cargo.toml
+@@ -94,6 +94,7 @@ opt-level = 1
+ approx = "0.5.1"
+ ort = { version = "2.0.0-rc.9", default-features = false, features = ["download-binaries", "tls-rustls", "ndarray"] }
+ ndarray = "0.16"
++tempfile = "3"
+ 
+ [patch.crates-io]
+ # candle-core = { path = "../../candle/candle-core" }
+diff --git a/embeddings/src/model/local.rs b/embeddings/src/model/local.rs
+index 0210cf5..66441b8 100644
+--- a/embeddings/src/model/local.rs
++++ b/embeddings/src/model/local.rs
+@@ -19,7 +19,7 @@ use candle_transformers::models::quantized_gemma3::ModelWeights as QuantizedGemm
+ use candle_transformers::models::quantized_llama::ModelWeights as QuantizedLlamaModel;
+ use candle_transformers::models::qwen3::{Config as QwenConfig, Model as QwenModel, Qwen3Cache};
+ use candle_transformers::models::t5::{Config as T5Config, T5EncoderModel};
+-use hf_hub::{api::sync::ApiBuilder, Repo, RepoType};
++use hf_hub::{api::sync::ApiBuilder, Cache, CacheRepo, Repo, RepoType};
+ use serde_json::Value;
+ use std::collections::HashMap;
+ use std::error::Error;
+@@ -269,6 +269,11 @@ pub fn build_model_info(
+     let _download_tracker = download_tracker_enter(model_id);
+ 
+     let repo = Repo::with_revision(model_id.to_string(), RepoType::Model, revision.to_string());
++    let cached_repo = Cache::new(cache_path.clone()).repo(repo.clone());
++    if let Some(model_info) = try_build_cached_onnx_model_info(&cached_repo) {
++        return Ok(model_info);
++    }
++
+     let mut api_builder = ApiBuilder::new().with_cache_dir(cache_path);
+     if let Some(token) = hf_token {
+         api_builder = api_builder.with_token(Some(token.to_string()));
+@@ -404,6 +409,20 @@ fn try_find_onnx_file(api: &hf_hub::api::sync::ApiRepo) -> Option<PathBuf> {
+         .or_else(|| api.get("onnx/model.onnx").ok())
+ }
+ 
++/// Resolve a complete ONNX bundle only from the local Hugging Face cache.
++fn try_build_cached_onnx_model_info(cache: &CacheRepo) -> Option<LocalModelInfo> {
++    let onnx_path = cache
++        .get("model.onnx")
++        .or_else(|| cache.get("onnx/model.onnx"))?;
++    Some(LocalModelInfo {
++        config_path: cache.get("config.json")?,
++        tokenizer_path: cache.get("tokenizer.json")?,
++        weights_paths: vec![],
++        gguf_path: None,
++        onnx_path: Some(onnx_path),
++    })
++}
++
+ /// Load tokenizer with fallback for BPE format
+ pub fn load_tokenizer(path: &PathBuf) -> Result<Tokenizer, Box<dyn Error>> {
+     if let Ok(tok) = Tokenizer::from_file(path) {
+@@ -1450,6 +1469,57 @@ mod tests {
+         ));
+     }
+ 
++    #[test]
++    fn test_cached_onnx_bundle_is_resolved_without_remote_format_probes() {
++        let cache_dir = tempfile::tempdir().unwrap();
++        let snapshot = cache_dir
++            .path()
++            .join("models--test--e5")
++            .join("snapshots")
++            .join("cached-revision");
++        std::fs::create_dir_all(&snapshot).unwrap();
++        std::fs::create_dir_all(
++            cache_dir.path().join("models--test--e5").join("refs"),
++        )
++        .unwrap();
++        std::fs::write(
++            cache_dir
++                .path()
++                .join("models--test--e5")
++                .join("refs")
++                .join("main"),
++            "cached-revision",
++        )
++        .unwrap();
++        std::fs::write(snapshot.join("config.json"), b"{}").unwrap();
++        std::fs::write(snapshot.join("tokenizer.json"), b"{}").unwrap();
++        std::fs::write(snapshot.join("model.onnx"), b"onnx").unwrap();
++        let cache = hf_hub::Cache::new(cache_dir.path().to_path_buf()).repo(
++            Repo::with_revision("test/e5".to_string(), RepoType::Model, "main".to_string()),
++        );
++
++        let cached = try_build_cached_onnx_model_info(&cache).expect("complete cached ONNX bundle");
++        assert_eq!(cached.config_path, snapshot.join("config.json"));
++        assert_eq!(cached.tokenizer_path, snapshot.join("tokenizer.json"));
++        assert_eq!(cached.onnx_path, Some(snapshot.join("model.onnx")));
++
++        let source = include_str!("local.rs");
++        let build_model_info_source = source
++            .split("pub fn build_model_info")
++            .nth(1)
++            .unwrap()
++            .split("/// Try to find a GGUF file")
++            .next()
++            .unwrap();
++        let cached_probe = build_model_info_source
++            .find("try_build_cached_onnx_model_info")
++            .expect("cached ONNX fast path");
++        let api_builder = build_model_info_source
++            .find("ApiBuilder::new")
++            .expect("Hugging Face API builder");
++        assert!(cached_probe < api_builder);
++    }
++
+     #[test]
+     fn test_model_arch_detection_qwen3() {
+         let qwen_config = r#"{"model_type":"qwen3"}"#;
+-- 
+2.50.1 (Apple Git-155)
+
