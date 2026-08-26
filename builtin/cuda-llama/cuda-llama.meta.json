@@ -1,10 +1,13 @@
 {
   "schema_version": 1,
   "runtime": "cuda-llama",
-  "runtime_version": "2026.08.26.10615",
+  "runtime_version": "2026.08.27.10615.1",
   "llama_build": 10615,
   "llama_revision": "f280b2698",
+  "cuda_toolkit_version": "12.8.1",
+  "cuda_architectures": "50-virtual;61-virtual;70-virtual;75-virtual;80-virtual;86-real;89-real;90-virtual;120a-real",
+  "build_profile": "photos-generic-cuda",
   "artifact": "cuda-llama.raw",
-  "sha256": "30b05111518c62a2c32ea5d10299aaca8475245fd6f98a086e9f4b8963a6eb8f",
-  "size_bytes": 766066688
+  "sha256": "12bcccf9b8b4fce05654206df395dfb30defbb7ae6da5f86e142bcb854683c16",
+  "size_bytes": 429826048
 }
