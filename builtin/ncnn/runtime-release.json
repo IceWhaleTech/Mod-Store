@@ -1,38 +1,51 @@
 {
-  "artifact_abi": "v4",
+  "artifact_abi": "v7",
   "compatibility": {
-    "artifact_upgrade": "same_v4_filename_replace_by_rejected_sha256",
     "face_bundle": "scrfd-5pt-ncnn-v3+adaface-5pt-align-ncnn-v2",
-    "new_app_old_runtime": "supported_via_face_fallback",
-    "old_app_new_runtime": "supported_via_combined_face_task"
+    "ocr_runtime": "embedded_in_wrapper_no_executable",
+    "runtime_policy": "v7_only_no_legacy_fallback"
   },
   "json_abi": "json-v2",
-  "published_at": "2026-08-30T04:54:05Z",
+  "published_at": "2026-09-04T15:14:26Z",
   "replaces_sha256": [
-    "d9e46d660365ebdd79c062dc2484d42804789b6afb62c4d2a4a3b7d868d3c39c"
+    "d9e46d660365ebdd79c062dc2484d42804789b6afb62c4d2a4a3b7d868d3c39c",
+    "add54e3aa3d798bdd307fac53d66a33a3247cf7fdcf804dc2470817a0fc779f1",
+    "b59e258c7b8ae799724c924d05324a7a67dc69b83f224e5ead595d9e233d8667",
+    "7ed1640a8bd68e8ca47c534c66af89c03a7c96eb601ff98d76f5b0e18050cef3"
   ],
-  "runtime_version": "2026.08.30.1",
+  "runtime_version": "2026.09.04.1",
   "schema_version": 1,
-  "source_revision": "2ce1b99438f329fd35efed89f6fdeb60b0fe1bb5+dirty.20260830",
+  "source_revision": "2ce1b99438f329fd35efed89f6fdeb60b0fe1bb5+dirty.d032835cd86b",
   "supported_tasks": [
     "text_embedding",
-    "image_embedding",
     "detect",
     "detect_*",
     "face",
     "face_detect",
     "face_embed",
-    "nsfw",
-    "nsfw_classify",
     "ocr"
   ],
   "targets": [
     {
+      "arch": "arm64",
+      "os": "darwin",
+      "path": "darwin/arm64/libzima_ncnn_runtime_v7.dylib",
+      "sha256": "0aa8156930f63d82d6d5e46b8c2d7f35f6c3c57102ab39507957d0d7da487d87",
+      "size": 3910722
+    },
+    {
       "arch": "amd64",
       "os": "linux",
-      "path": "linux/amd64/libzima_ncnn_runtime_v4.so",
-      "sha256": "add54e3aa3d798bdd307fac53d66a33a3247cf7fdcf804dc2470817a0fc779f1",
-      "size": 8125632
+      "path": "linux/amd64/libzima_ncnn_runtime_v7.so",
+      "sha256": "54c3d0c1414a65bbbc21ae2797cdce244012cad3e1478978764e91a4963509d4",
+      "size": 7771928
+    },
+    {
+      "arch": "arm64",
+      "os": "linux",
+      "path": "linux/arm64/libzima_ncnn_runtime_v7.so",
+      "sha256": "13cd740e8c93eabb5f49913710ba837b1c0da4334bb2b85f9adcd511e9b07107",
+      "size": 7583904
     }
   ]
 }
