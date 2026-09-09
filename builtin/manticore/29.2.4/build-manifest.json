@@ -35,8 +35,7 @@
       "columnar",
       "knn",
       "embeddings",
-      "icu",
-      "jieba"
+      "icu"
     ],
     "toolchain_image": "manticoresearch/external_toolchain:vcpkg331_20260310",
     "toolchain_image_id": "sha256:87537946a714b2dd501799579200510c79586b922b60d43c407e3d5b4c66855f",
@@ -46,12 +45,36 @@
     "onnxruntime": "1.24.2 static glibc2.17",
     "mksquashfs": "4.6.1",
     "squashfs": {
-      "compression": "zstd",
-      "compression_level": 22,
+      "compression": "gzip",
+      "compression_level": 9,
       "block_size": 1048576,
       "all_root": true,
       "xattrs": false
     }
+  },
+  "repackage": {
+    "method": "merged previously published binary modules without rebuilding",
+    "excluded_features": [
+      "jieba"
+    ],
+    "source_packages": [
+      {
+        "file": "manticore.raw",
+        "sha256": "199778d12a67e7edf2f807f009b31ff54f8a71d3f0f63eaffa1cc523b4ab5366"
+      },
+      {
+        "file": "manticore_knn.raw",
+        "sha256": "f1f95826fb5cffe4e78113da75b73b6db17a68f8771e57ac53b343feabb7e8fc"
+      },
+      {
+        "file": "manticore_embeddings.raw",
+        "sha256": "ec910d789519a20ac4610e1ed499333105823dcd7d8b105f062e5e96b198f4e0"
+      },
+      {
+        "file": "manticore_icu.raw",
+        "sha256": "7a0dc806b6f3190f1738a76bdde04efe646db7db29b2e67812b4260f4ef8c953"
+      }
+    ]
   },
   "compatibility_baseline": {
     "host": "10.0.0.89",
@@ -70,8 +93,8 @@
     "complete_cached_bundle_bypasses_remote_format_probes": true
   },
   "constraints": {
-    "maximum_file_bytes_exclusive": 15000000,
-    "all_packages_within_limit": true,
+    "single_package": true,
+    "github_raw_compatible": true,
     "photos_searchd_is_regular_file": true,
     "photos_searchd_is_symlink": false
   },
@@ -88,48 +111,19 @@
   "packages": [
     {
       "file": "manticore.raw",
-      "size_bytes": 9859072,
-      "sha256": "199778d12a67e7edf2f807f009b31ff54f8a71d3f0f63eaffa1cc523b4ab5366",
+      "size_bytes": 40570880,
+      "sha256": "7e6ab1075fad0e6189c93c6c02ca81044db86f22446fc386300196620ff5ccf9",
       "contents": [
         "/usr/bin/searchd",
         "/usr/bin/photos-searchd",
         "/usr/include/manticore/sphinxudf.h",
         "/usr/share/manticore/en.pak",
         "/usr/share/manticore/stopwords/",
-        "/usr/share/manticore/tzdata/"
-      ]
-    },
-    {
-      "file": "manticore_knn.raw",
-      "size_bytes": 2301952,
-      "sha256": "f1f95826fb5cffe4e78113da75b73b6db17a68f8771e57ac53b343feabb7e8fc",
-      "contents": [
+        "/usr/share/manticore/tzdata/",
         "/usr/share/manticore/modules/lib_manticore_columnar.so",
-        "/usr/share/manticore/modules/lib_manticore_knn.so"
-      ]
-    },
-    {
-      "file": "manticore_embeddings.raw",
-      "size_bytes": 10018816,
-      "sha256": "ec910d789519a20ac4610e1ed499333105823dcd7d8b105f062e5e96b198f4e0",
-      "contents": [
-        "/usr/share/manticore/modules/lib_manticore_knn_embeddings.so"
-      ]
-    },
-    {
-      "file": "manticore_icu.raw",
-      "size_bytes": 9011200,
-      "sha256": "7a0dc806b6f3190f1738a76bdde04efe646db7db29b2e67812b4260f4ef8c953",
-      "contents": [
+        "/usr/share/manticore/modules/lib_manticore_knn.so",
+        "/usr/share/manticore/modules/lib_manticore_knn_embeddings.so",
         "/usr/share/manticore/icu/icudt65l.dat"
-      ]
-    },
-    {
-      "file": "manticore_jieba.raw",
-      "size_bytes": 3649536,
-      "sha256": "f1ba31dad29b9a9118d754b3daf55c4bfd4ed9a9c011e40cf01c58eef8dda102",
-      "contents": [
-        "/usr/share/manticore/jieba/"
       ]
     }
   ]

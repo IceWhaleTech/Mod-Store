@@ -8,6 +8,6 @@
   "cuda_architectures": "50-virtual;61-virtual;70-virtual;75-virtual;80-virtual;86-real;89-real;90-virtual;120a-real",
   "build_profile": "photos-generic-cuda",
   "artifact": "cuda-llama.raw",
-  "sha256": "12bcccf9b8b4fce05654206df395dfb30defbb7ae6da5f86e142bcb854683c16",
-  "size_bytes": 429826048
+  "sha256": "5362d6aaac9794e19a56f6defaa32b6bd9968ff330ee960d4a8ecf3e06496010",
+  "size_bytes": 476491776
 }
