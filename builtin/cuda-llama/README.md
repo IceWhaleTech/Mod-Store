@@ -9,8 +9,8 @@ Versioned CUDA llama.cpp runtime used by ZimaOS Photos VLM.
 - CUDA architectures: Maxwell, Pascal, Volta, Turing, Ampere, Ada, Hopper, Blackwell
 - Build profile: `photos-generic-cuda`
 - Artifact: `cuda-llama.raw`
-- Size: `429826048` bytes
-- SHA256: `12bcccf9b8b4fce05654206df395dfb30defbb7ae6da5f86e142bcb854683c16`
+- Size: `476491776` bytes
+- SHA256: `5362d6aaac9794e19a56f6defaa32b6bd9968ff330ee960d4a8ecf3e06496010`
 - Release tag: `cuda-llama-v2026.08.27.10615.1`
 
 The runtime is not tied to RTX 3050. It ships real code for common current
