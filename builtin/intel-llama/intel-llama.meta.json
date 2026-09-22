@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "runtime": "intel-llama",
-  "runtime_version": "2026.09.20.11060",
+  "runtime_version": "2026.09.22.11060",
   "llama_build": 11060,
   "llama_revision": "4260903678a7525f43419dc234a942b551a8951e",
   "backends": ["sycl", "cpu"],
   "build_profile": "photos-intel-sycl-cpu",
   "artifact": "intel-llama.raw",
-  "sha256": "54519a26b4d51d2dccd4df5ba45eef252c5591851f98d0db0e294311d2bc7992",
-  "size_bytes": 85135360
+  "sha256": "410f5a8935e2b2ce4540da6bd5076203810ab8779167067a824284d1310c05fc",
+  "size_bytes": 85200896
 }
