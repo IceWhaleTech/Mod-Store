@@ -40,5 +40,10 @@
         "name":"mobile_backup",
         "title": "Mobile Backup",
         "self_hosted_url":"https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/icewhale_backup/releases/download/mobile_backup.json"
+    },
+    {
+        "name": "folio",
+        "title": "Folio",
+        "self_hosted_url": "https://zima-release.tkisnnn.pp.ua/meta.json"
     }
 ]
