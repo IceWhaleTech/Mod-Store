@@ -5,8 +5,8 @@
         "repo": "IceWhaleTech/ZimaOS-doconverter"
     },
     {
-        "name": "zima_cron",
-        "title": "zima_cron",
+        "name": "cron",
+        "title": "cron",
         "repo": "chicohaager/cron"
     },
     {
