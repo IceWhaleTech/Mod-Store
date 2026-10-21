@@ -1,0 +1,38 @@
+{
+  "version": "8.1.3-photos.1",
+  "release": "8.1.3-photos.1",
+  "platform": "linux/amd64",
+  "url": "https://github.com/IceWhaleTech/Mod-Store/releases/download/media-runtime-v8.1.3-photos.1/media-runtime-linux-amd64.tar.xz",
+  "sha256": "1ddcbfb0a22813c4185202527a185b6495765b43224ec4bd9411493fb14c914e",
+  "binaries": {
+    "ffmpeg": "8da2eca15e824c18990b477d992462f9b5ba44ec3f3379880e1d3d0f9c10dda0",
+    "ffprobe": "83e014b86c8c35d120001ce5743fd6aeadc4681705ce6758872f3ce480bc2f6e"
+  },
+  "files": {
+    "COPYING.GPLv2": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+    "build-packages.txt": "20d89a1908d49d03a37a4b0306dd80de2188222bfd2650e99237cc340ef22393",
+    "capabilities.json": "70cbb7cbe42e29665e36dcbb90b8408c5f1b85690f93837b54a2c64b0150c6cc",
+    "configure.flags": "d0496c9595924e53ad92ed4a1a879c8f269f7009e915f6cf669865dd2def48ad",
+    "dependencies.json": "b70430ba98f6d66a23e10545f2e884309225e250391be826a2a5810f7367afc2",
+    "lib/libdrm.so.2": "fe49c61da1c459bb03867988209293280c113fe93090a31df6da3b60e023a75f",
+    "lib/libgcc_s.so.1": "44330146d5d3e158d130316d50a3a007890863f7d4aca38d4b2b7b3129eda593",
+    "lib/libstdc++.so.6": "22965f5a645ffa9d638fe605858e339a3d23e9bfee9e8d88148aa33d19083b33",
+    "lib/libva-drm.so.2": "34a5d69e6a7d1c49247a2287c73cb624a7f65140d45b95bff218743aa5cbb5fa",
+    "lib/libva.so.2": "9b00089b55f3aa189152dec775cc6a023bc75978051c684afcbf960894dc316a",
+    "lib/libvpl.so.2": "31db6179f0272c19d96131aaeb3c30af582fb50d0b97c969b255042f89df2c2e",
+    "lib/libx264.so.163": "c77e2d9d50212555769de53f1b28fd7d96a5b86568bf155a2b38b79fd96eae4d",
+    "lib/libz.so.1": "141487afd4eba9d2ec4c105d3c0963a9f4ec12edcedc118d36f36f0ffe468308",
+    "lib/libzimg.so.2": "40529cbbc285b7a55b401b6c1dc0ab4a2427f6cfae697d888c0d0e8cc49ef246",
+    "licenses/dav1d.BSD": "b327887de263238deaa80c34cdd2ff3e0ba1d35db585ce14a37ce3e74ee389e9",
+    "licenses/libdrm2.copyright": "512c9a57fd8b449aa157351da9df07bf8e19f767e496a72205a4020268ddb2e0",
+    "licenses/libgcc-s1.copyright": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3",
+    "licenses/libstdc++6.copyright": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3",
+    "licenses/libva-drm2.copyright": "b70141b6defaa0d09a2acc147fda2fde1b2a784a54eb83fc628906bc3151606b",
+    "licenses/libva2.copyright": "b70141b6defaa0d09a2acc147fda2fde1b2a784a54eb83fc628906bc3151606b",
+    "licenses/libvpl2.copyright": "a38e311b3d5df5292e132d2ad0d0efdcefba61d8401ba81e8a4ff828ee12d310",
+    "licenses/libx264-163.copyright": "2571dd1c549feb9c73c68a1fc9370d72f5369febee2856d84e4e935844733eac",
+    "licenses/libzimg2.copyright": "b302dc2568943b3326d3be15d03fe968888d1673962891ea93050a2f41e6e609",
+    "licenses/zlib1g.copyright": "d77204eee882807240f6351c4f5ae2a4bcdb5b773ff77d10647b9b66b826b2fb",
+    "source.json": "b45dfa22b52b434f9ad6d5ad5ad7c89a8b3735d53ada30781d3f22590c401433"
+  }
+}

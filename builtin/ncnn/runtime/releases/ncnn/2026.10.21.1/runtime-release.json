@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact_abi": "v7",
+  "json_abi": "json-v2",
+  "compatibility": {
+    "face_bundle": "scrfd-5pt-ncnn-v3+adaface-5pt-align-ncnn-v2",
+    "ocr_runtime": "embedded_in_wrapper_no_executable",
+    "runtime_policy": "v7_only_no_legacy_fallback"
+  },
+  "supported_tasks": [
+    "text_embedding",
+    "detect",
+    "detect_*",
+    "face",
+    "face_detect",
+    "face_embed",
+    "ocr"
+  ],
+  "runtime_version": "2026.10.21.1",
+  "published_at": "2026-10-21T03:00:42Z",
+  "source_revision": "6d48d3a3b71f532b938e0b9e05675eac75b5fdbe+dirty.e775da81511d",
+  "source_fingerprint": "e775da81511d95440378c8c19efc4a4cf80fa1a191f70589505bd3dc0c4162d5",
+  "replaces_sha256": [
+    "0aa8156930f63d82d6d5e46b8c2d7f35f6c3c57102ab39507957d0d7da487d87",
+    "54c3d0c1414a65bbbc21ae2797cdce244012cad3e1478978764e91a4963509d4",
+    "13cd740e8c93eabb5f49913710ba837b1c0da4334bb2b85f9adcd511e9b07107"
+  ],
+  "build": {
+    "go": "go version go1.25.6 darwin/arm64",
+    "linux_compiler": "zig 0.16.0 glibc target 2.17",
+    "linux_rpath": "$ORIGIN"
+  },
+  "targets": [
+    {
+      "os": "darwin",
+      "arch": "arm64",
+      "path": "darwin/arm64/libzima_ncnn_runtime_v7.dylib",
+      "sha256": "a28ccfb334c6c6de7e62d0510d815d86dada2ce6635e9a11e544a2fdc19eec41",
+      "size": 4175538
+    },
+    {
+      "os": "linux",
+      "arch": "amd64",
+      "path": "linux/amd64/libzima_ncnn_runtime_v7.so",
+      "sha256": "b94befa909f6a07685c66e3ec092cb5648786eac9ae170e159fc95c2f7e9e297",
+      "size": 4470680
+    },
+    {
+      "os": "linux",
+      "arch": "arm64",
+      "path": "linux/arm64/libzima_ncnn_runtime_v7.so",
+      "sha256": "8083b42e30a5676c8fae113d95aba1918932745387b0855f26c32480bc9e436d",
+      "size": 4269960
+    }
+  ],
+  "native_libraries": [
+    {
+      "path": "linux/amd64/libncnn.so",
+      "sha256": "26288ce93072f81eaa1fa91d0b10b329ae2f458dbed85045cdeeb8f048953975",
+      "size": 7972881,
+      "source_sha256": "656a362f920033b1dee239609618d8b287b15500ad1075432887a904a0e6cf55",
+      "packaging_change": "set DT_RPATH to $ORIGIN; no native NCNN rebuild"
+    },
+    {
+      "path": "linux/arm64/libncnn.so",
+      "sha256": "a86ff9df0a61e02a48de8d80517b6a4d516d22b256c5745d9f1fa05b1cd82612",
+      "size": 2726937,
+      "source_sha256": "69fa4805ee3e96699cf0e5d22d5d955bddef5ce9dd6072d96724db095a71f338",
+      "packaging_change": "set DT_RPATH to $ORIGIN; no native NCNN rebuild"
+    }
+  ]
+}

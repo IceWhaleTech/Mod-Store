@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "runtime": "media-runtime",
+  "runtime_version": "8.1.3-photos.1",
+  "platform": "linux/amd64",
+  "artifact": "media-runtime-linux-amd64.tar.xz",
+  "sha256": "1ddcbfb0a22813c4185202527a185b6495765b43224ec4bd9411493fb14c914e",
+  "size_bytes": 15026840,
+  "path": "runtime/releases/media-runtime/8.1.3-photos.1/linux/amd64/media-runtime-linux-amd64.tar.xz",
+  "manifest": "runtime/releases/media-runtime/8.1.3-photos.1/linux/amd64/runtime.json"
+}
