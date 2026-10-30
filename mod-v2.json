@@ -1,5 +1,11 @@
 [
     {
+        "name": "filens",
+        "title": "FiLens",
+        "version": "0.1.0",
+        "url": "https://github.com/IceWhaleTech/Mod-Store/releases/download/filens-v0.1.0/filens.raw"
+    },
+    {
         "name": "doconverter",
         "title": "doconverter",
         "repo": "IceWhaleTech/ZimaOS-doconverter"
