@@ -12,8 +12,10 @@ run `sudo zpkg update` followed by `sudo zpkg upgrade filens`.
 The system extension installs `/usr/bin/filens`, native Linux x64/arm64 binaries
 and shared WASM document engines. It needs no Node.js or background service.
 OCR reuses Photos' installed NCNN v7 JSON v2 runtime and RapidOCR model files.
-When they are absent or incompatible, OCR reports unavailable; other CLI
-capabilities remain usable. No browser site, models or NCNN libraries are
+If they are absent or incompatible, run `filens setup-ocr` to install a private
+compatible copy. Setup verifies a pinned SHA-256 and tests the runtime before
+activating it; npm Mirror is tried first, then official npm. Photos is left
+unchanged. Other CLI capabilities remain usable without OCR. No browser site, models or NCNN libraries are
 included in this package.
 
 The versioned raw image is served through jsDelivr and kept below 15 MB.

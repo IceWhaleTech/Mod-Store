@@ -1,25 +1,40 @@
 {
   "name": "filens",
-  "version": "0.4.0",
+  "version": "0.4.1",
+  "cli_version": "0.4.0",
   "kind": "native-cli",
   "platforms": [
     "linux-x64",
     "linux-arm64"
   ],
-  "download_url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/Mod-Store@main/builtin/filens/0.4.0/filens.raw",
-  "sha256": "f5aefeeeeda8d3ec53302c5f52f4cb0c7909742dfa12bac07e9901824faafcc4",
+  "download_url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/Mod-Store@main/builtin/filens/0.4.1/filens.raw",
+  "sha256": "f056ef4c07ad6aba52fcd64cd0648ae4fc78966204d4e8c1b5cbf702fa55b653",
   "size_bytes": 9052160,
-  "ocr": "Reuses Photos NCNN v7 JSON v2 runtime and RapidOCR models; no duplicate runtime or models bundled",
+  "ocr": "Reuses compatible Photos NCNN v7 JSON v2 runtime/models; filens setup-ocr installs a private verified fallback through npm Mirror or official npm",
   "source_packages": [
     {
       "name": "filens-cli-linux-x64",
       "version": "0.4.0",
-      "integrity": "sha512-VwGT63NANAmUxJ7GK+lHb+bcclACTugjxAhJ2WSUgQRBIE1XOqTdHni5BB53CsI+mGd9lI2TP/qzHG+79LMRQA=="
+      "integrity": "sha512-VwGT63NANAmUxJ7GK+lHb+bcclACTugjxAhJ2WSUgQRBIE1XOqTdHni5BB53CsI+mGd9lI2TP/qzHG+79LMRQA==",
+      "bundled": true
     },
     {
       "name": "filens-cli-linux-arm64",
       "version": "0.4.0",
-      "integrity": "sha512-xQBVcRCmwZHJgxwn9LlfASjvXOcfpgWqvbV2D+MnICm3tEVCyGBO19DqSfqLpYrO0eIrRBut0vrlo2OcFWskiw=="
+      "integrity": "sha512-xQBVcRCmwZHJgxwn9LlfASjvXOcfpgWqvbV2D+MnICm3tEVCyGBO19DqSfqLpYrO0eIrRBut0vrlo2OcFWskiw==",
+      "bundled": true
+    },
+    {
+      "name": "filens-ocr-linux-x64",
+      "version": "0.4.0",
+      "integrity": "sha512-DHOSJvSofk2FQumsCPuf4wb7tosmk/EFCKX2bUYYKfSoj1z+mAn31Ol//u5K8Ro+h9hfu5MX4GCU3pxdHvPtwg==",
+      "bundled": false
+    },
+    {
+      "name": "filens-ocr-linux-arm64",
+      "version": "0.4.0",
+      "integrity": "sha512-X6GK+uPnqL7rxsdLb5VLUvsvdXGH3FnhljxXJKbOHkyptiYWHerlCxdT5ObKB9kvpy3EoKrH2CYLeWQsV+g1Yw==",
+      "bundled": false
     }
   ]
 }
