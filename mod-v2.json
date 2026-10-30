@@ -1,9 +1,9 @@
 [
     {
         "name": "filens",
-        "title": "FiLens",
-        "version": "0.1.0",
-        "url": "https://github.com/IceWhaleTech/Mod-Store/releases/download/filens-v0.1.0/filens.raw"
+        "title": "FiLens CLI",
+        "version": "0.4.0",
+        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/Mod-Store@main/builtin/filens/0.4.0/filens.raw"
     },
     {
         "name": "doconverter",

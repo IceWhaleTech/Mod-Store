@@ -1,7 +1,25 @@
 {
   "name": "filens",
-  "version": "0.1.0",
-  "download_url": "https://github.com/IceWhaleTech/Mod-Store/releases/download/filens-v0.1.0/filens.raw",
-  "sha256": "66650dd9d8057db7cdf8c96f4668d2082d46dbd1a7bb1c7a189780993f091d97",
-  "size_bytes": 154832896
+  "version": "0.4.0",
+  "kind": "native-cli",
+  "platforms": [
+    "linux-x64",
+    "linux-arm64"
+  ],
+  "download_url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/Mod-Store@main/builtin/filens/0.4.0/filens.raw",
+  "sha256": "f5aefeeeeda8d3ec53302c5f52f4cb0c7909742dfa12bac07e9901824faafcc4",
+  "size_bytes": 9052160,
+  "ocr": "Reuses Photos NCNN v7 JSON v2 runtime and RapidOCR models; no duplicate runtime or models bundled",
+  "source_packages": [
+    {
+      "name": "filens-cli-linux-x64",
+      "version": "0.4.0",
+      "integrity": "sha512-VwGT63NANAmUxJ7GK+lHb+bcclACTugjxAhJ2WSUgQRBIE1XOqTdHni5BB53CsI+mGd9lI2TP/qzHG+79LMRQA=="
+    },
+    {
+      "name": "filens-cli-linux-arm64",
+      "version": "0.4.0",
+      "integrity": "sha512-xQBVcRCmwZHJgxwn9LlfASjvXOcfpgWqvbV2D+MnICm3tEVCyGBO19DqSfqLpYrO0eIrRBut0vrlo2OcFWskiw=="
+    }
+  ]
 }
