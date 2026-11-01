@@ -1,40 +1,48 @@
 {
   "name": "filens",
-  "version": "0.4.1",
-  "cli_version": "0.4.0",
+  "version": "0.5.0",
+  "cli_version": "0.5.0",
   "kind": "native-cli",
   "platforms": [
     "linux-x64",
     "linux-arm64"
   ],
-  "download_url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/Mod-Store@main/builtin/filens/0.4.1/filens.raw",
-  "sha256": "f056ef4c07ad6aba52fcd64cd0648ae4fc78966204d4e8c1b5cbf702fa55b653",
-  "size_bytes": 9052160,
+  "download_url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/Mod-Store@main/builtin/filens/0.5.0/filens.raw",
+  "sha256": "ef71a510bdfdef8f9d8e419e6c7461b0d2b2e48774cde92248466216c1403f1d",
+  "size_bytes": 12611584,
   "ocr": "Reuses compatible Photos NCNN v7 JSON v2 runtime/models; filens setup-ocr installs a private verified fallback through npm Mirror or official npm",
   "source_packages": [
     {
       "name": "filens-cli-linux-x64",
-      "version": "0.4.0",
-      "integrity": "sha512-VwGT63NANAmUxJ7GK+lHb+bcclACTugjxAhJ2WSUgQRBIE1XOqTdHni5BB53CsI+mGd9lI2TP/qzHG+79LMRQA==",
+      "version": "0.5.0",
+      "integrity": "sha512-NF+IDUJ/2DY0zzt4iTgbJVq2SM59BKaSnIljkL5SGPCAEqmVTThmehLjd2YvDPxCR78HQhXnpHS8q5c9OjzyZQ==",
       "bundled": true
     },
     {
       "name": "filens-cli-linux-arm64",
-      "version": "0.4.0",
-      "integrity": "sha512-xQBVcRCmwZHJgxwn9LlfASjvXOcfpgWqvbV2D+MnICm3tEVCyGBO19DqSfqLpYrO0eIrRBut0vrlo2OcFWskiw==",
+      "version": "0.5.0",
+      "integrity": "sha512-O7EAfKBwnYNyDJy6prLWPdCNUggrGjgw6ZySczTRC06sO4D6AqeEl1QbRMMWHPlt2yfGW9ABNZzpfSeo+igoqQ==",
       "bundled": true
     },
     {
       "name": "filens-ocr-linux-x64",
-      "version": "0.4.0",
-      "integrity": "sha512-DHOSJvSofk2FQumsCPuf4wb7tosmk/EFCKX2bUYYKfSoj1z+mAn31Ol//u5K8Ro+h9hfu5MX4GCU3pxdHvPtwg==",
+      "version": "0.5.0",
+      "integrity": "sha512-gzVCfIFoLKyS3HOjSL3rKAUDycpypM+JZdtFZVNenbS7bBrWQqJIKjnxGYtGMMdpiiF7LunDpmHdQFa1SXTkjQ==",
       "bundled": false
     },
     {
       "name": "filens-ocr-linux-arm64",
-      "version": "0.4.0",
-      "integrity": "sha512-X6GK+uPnqL7rxsdLb5VLUvsvdXGH3FnhljxXJKbOHkyptiYWHerlCxdT5ObKB9kvpy3EoKrH2CYLeWQsV+g1Yw==",
+      "version": "0.5.0",
+      "integrity": "sha512-7QH7t1EIwyiLLSQ+YjctsMXTBUS24QA/lDnAF18LogJD5JptFI+0maU39n8ZhkXLA7UG7siJx73KtEXy1UZzPw==",
       "bundled": false
+    },
+    {
+      "name": "filens-preview",
+      "version": "0.2.0",
+      "integrity": "sha512-WLeVfi2ews7coH+Q++sh6nAp6mfonJR6gAKqCQc1d2fQesESIEPjxSFj/iOqWDd6eerQHV17T7Pu7jM5zLriwQ==",
+      "bundled": true
     }
-  ]
+  ],
+  "preview_version": "0.2.0",
+  "preview": "Shared all-in-one frontend engine bundled; exports self-contained offline HTML without Node.js or runtime downloads"
 }
