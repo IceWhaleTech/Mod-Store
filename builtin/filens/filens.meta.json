@@ -1,14 +1,14 @@
 {
   "name": "filens",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "cli_version": "0.5.0",
   "kind": "native-cli",
   "platforms": [
     "linux-x64",
     "linux-arm64"
   ],
-  "download_url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/Mod-Store@main/builtin/filens/0.5.0/filens.raw",
-  "sha256": "ef71a510bdfdef8f9d8e419e6c7461b0d2b2e48774cde92248466216c1403f1d",
+  "download_url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/Mod-Store@main/builtin/filens/0.5.1/filens.raw",
+  "sha256": "14ca9b01d07adee5140de9ab77f0db12ac2d475e3e66279ffe2c302371dde320",
   "size_bytes": 12611584,
   "ocr": "Reuses compatible Photos NCNN v7 JSON v2 runtime/models; filens setup-ocr installs a private verified fallback through npm Mirror or official npm",
   "source_packages": [
@@ -44,5 +44,6 @@
     }
   ],
   "preview_version": "0.2.0",
-  "preview": "Shared all-in-one frontend engine bundled; exports self-contained offline HTML without Node.js or runtime downloads"
+  "preview": "Headless preview: exports self-contained offline HTML without launching a browser; explicit HTTP mode uses loopback with SSH forwarding",
+  "preview_browser_launch": false
 }
