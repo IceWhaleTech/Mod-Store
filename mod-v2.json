@@ -6,6 +6,11 @@
         "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/Mod-Store@main/builtin/filens/0.5.1/filens.raw"
     },
     {
+        "name": "device-management-dashboard",
+        "title": "device-management-dashboard",
+        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/Mod-Store@main/builtin/device-management-dashboard/device-management-dashboard.raw"
+    },
+    {
         "name": "doconverter",
         "title": "doconverter",
         "repo": "IceWhaleTech/ZimaOS-doconverter"
@@ -29,18 +34,6 @@
         "name": "undelit",
         "title": "undelit",
         "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/undelit@main/undelit.raw"
-    },
-    {
-        "name": "zimaos_ai",
-        "title": "ZimaOS AI",
-        "url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI/releases/download/v0.0.86/zimaos_ai.raw",
-        "self_hosted_url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI/releases/download/zimaos_ai.txt"
-    },
-    {
-        "name":"zimaos_ai_intel",
-        "title": "ZimaOS AI for intel",
-        "url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI-Intel/releases/download/v0.0.86/zimaos_ai_intel.raw",
-        "self_hosted_url": "https://casaos.oss-cn-shanghai.aliyuncs.com/IceWhaleTech/ZimaOS-AI-Intel/releases/download/zimaos_ai_intel.txt"
     },
     {
         "name":"mobile_backup",
